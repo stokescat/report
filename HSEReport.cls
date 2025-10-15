@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e} \ProvidesClass{HSECourseW}
-% Класс предоставляет оформление курсовой работы как того требует ВШЭ 
-% ну или почти, лол )))))
+% Класс предоставляет оформление отчета по производственной практики, как того требует НИУ ВШЭ
+% ну или почти
+% хз почему Вышка не дает шаблоны для LaTeX, ворда у меня нет :(
 
 % Базовый класс
 \LoadClass[a4,12pt]{article}
@@ -157,54 +158,49 @@
 \newcommand{\TitleGroupNum}{12}
 \newcommand{\TitleAuthor}{Пупкин Василий Григорьевич}
 \newcommand{\TitleSupervisor}{профессор, д.ф.-м.н., Доцент Д. Д.}
+\newcommand{\TitleSubSupervisor}{Имя руководителя от организации}
 \newcommand{\TitleConsultant}{доцент, к.ф.-м.н., Консультант К. К.}
 \newcommand{\TitleCity}{Москва}
 \newcommand{\TitleYear}{2025}
+\newcommand{\TitleOrganization}{НИУ ВШЭ}
 
 % Титульная страница
 \renewcommand{\titlepage}{
 	\setcounter{page}{1}
 	\thispagestyle{empty}
 	\begin{center}
-		\textbf{Федеральное государственное автономное образовательное учреждение \\ 
-				высшего образования  «Национальный исследовательский университет \\
-				«Высшая школа экономики» \\}
-		\vspace{0.5cm}
-		\textbf{\TitleFaculty}
-		\begin{flushleft}
-			\textbf{Магистерская программа}  \underline{\TitleProgram} \\
-			\textbf{Департамент} \underline{\TitleDepartment} 
-		\end{flushleft}
+		Федеральное государственное автономное образовательное учреждение \\ 
+		высшего образования\\ 
+		\textbf{«Национальный исследовательский университет \\
+		«Высшая школа экономики» \\}
+		\vspace{0.25cm}
+		\TitleFaculty
 		
 		\vspace{1.5cm}
-		\textbf{КУРСОВАЯ РАБОТА}
+		\textbf{{\large Отчет о прохождении производственной\\
+		(научно-исследовательской) практики}}
 		\vspace{1cm}
 		
-		На тему <<\TitleTheme>>
+		\begin{flushleft}
+			\begin{tabular}{p{4cm}l}
+				\textbf{Выполнил студент:} & \underline{\TitleAuthor} \\
+				\textbf{Образовательной программы:}& \underline{\TitleProgram}  \\
+				 & \\
+				\textbf{Организация:} & \TitleOrganization \\
+				&  \\
+%% Если ну нужен руководитель от организации, то закомментировать эти строки
+%% и отнять от самого последнего \vspace ниже 2 cm
+%%				\textbf{Отчет проверил руководитель практики от организации:} & \TitleSubSupervisor \\
+%% 
+				\textbf{Отчет проверил руководитель практики от НИУ ВШЭ:} & \TitleSupervisor \\
+				\vspace{1cm}& \\
+				Подпись студента: & 
+			\end{tabular}
+		\end{flushleft}
 		
 		\vspace{0.5cm}
-		
-		\begin{flushright}
-			\begin{tabular}{c}
-				\multicolumn{1}{l}{Студент группы №\underline{\TitleGroupNum}} \\
-				\underline{\TitleAuthor}\\
-				{\scriptsize (Ф. И. О.)} \\ \\
-				
-				\multicolumn{1}{l}{Руководитель КР}\\
-				\underline{\TitleSupervisor}\\
-				{\scriptsize (должность, звание, Ф. И. О.)} \\ \\
 	
-% Если консультант не нужен, закомментируйте		
-% и прибавьте к последнему vpace еще 2 см
-% Мне не хотелось усложнять шаблон, поэтому сорри
-				\multicolumn{1}{l}{Консультант}\\
-				\underline{\TitleConsultant}\\
-				{\scriptsize (должность, звание, Ф. И. О.)}
-% коментировать до сюда, прибавлять 2cm к vspace ниже
-        \end{tabular}
-	\end{flushright}	
-	
-		\vspace{2cm}
+		\vspace{4cm}
 		\TitleCity, \TitleYear
 		
 	\end{center}
